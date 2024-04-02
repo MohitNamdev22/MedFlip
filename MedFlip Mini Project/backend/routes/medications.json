@@ -1,0 +1,28 @@
+{
+  "medications": [
+    {
+      "id": 3,
+      "name": "Crocin",
+      "expirationDate": "2024-12-31",
+      "price": 50
+    },
+    {
+      "id": 5,
+      "name": "Dolo",
+      "expirationDate": "2024-12-31",
+      "price": 50
+    },
+    {
+      "id": 6,
+      "name": "combiflame",
+      "expirationDate": "2024-12-12",
+      "price": 35
+    },
+    {
+      "id": 7,
+      "name": "mohit namdev",
+      "expirationDate": "123",
+      "price": 123
+    }
+  ]
+}
