@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AdminDashboard from './components/AdminDashboard';
 import LoginForm from './components/LoginForm';
+import RegistrationForm from './components/RegistrationForm';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
             <Routes>
                 <Route path={"/admin/medication"} element={<AdminDashboard />}/>
                 <Route path={"/auth/login"} element={<LoginForm />}/>
+                <Route path={"/auth/register"} element={<RegistrationForm />}/>
             </Routes>
         </Router>
         </div>

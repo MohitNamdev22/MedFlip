@@ -20,9 +20,15 @@
     },
     {
       "id": 7,
-      "name": "mohit namdev",
-      "expirationDate": "123",
-      "price": 123
+      "name": "Hitika",
+      "expirationDate": "9090-90-90",
+      "price": 8000
+    },
+    {
+      "id": 8,
+      "name": "mohit",
+      "expirationDate": "9090-90-90",
+      "price": 90
     }
   ]
 }
