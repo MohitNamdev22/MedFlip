@@ -1,5 +1,7 @@
 # Dependency directories
 /node_modules
+/backend/node_modules
+/medflip-frontend/node_modules
 
 # Production build directory
 /build
