@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function LoginForm() {
@@ -56,6 +57,7 @@ function LoginForm() {
           {loading ? 'Logging in...' : 'Login'}
         </button>
       </form>
+      <p>Register for a new User? <Link to="/auth/register">Register here</Link> </p>
     </div>
   );
 }
