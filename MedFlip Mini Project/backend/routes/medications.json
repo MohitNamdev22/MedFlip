@@ -7,12 +7,6 @@
       "price": 50
     },
     {
-      "id": 5,
-      "name": "Dolo",
-      "expirationDate": "2024-12-31",
-      "price": 50
-    },
-    {
       "id": 6,
       "name": "combiflame",
       "expirationDate": "2024-12-12",
@@ -20,15 +14,9 @@
     },
     {
       "id": 7,
-      "name": "Hitika",
-      "expirationDate": "9090-90-90",
-      "price": 8000
-    },
-    {
-      "id": 8,
-      "name": "mohit",
-      "expirationDate": "9090-90-90",
-      "price": 90
+      "name": "crocin advance",
+      "expirationDate": "2025-07-12",
+      "price": 25
     }
   ]
 }
