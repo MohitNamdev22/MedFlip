@@ -1,10 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useRecoilValue } from 'recoil';
+import { Navigate, Link } from 'react-router-dom';
 
 function AdminDashboard() {
   const [medications, setMedications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [newMedication, setNewMedication] = useState({ name: '', expirationDate: '', price: 0 });
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://localhost:3000/auth/login', { username, password });
+      setIsLoggedIn(true);
+    } catch (error) {
+      console.error('Login failed:', error);
+      setErrorMessage('Invalid username or password.');
+    }
+  };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      fetchMedications();
+    }
+  }, [isLoggedIn]);
 
   const fetchMedications = async () => {
     try {
@@ -17,10 +40,6 @@ function AdminDashboard() {
       setLoading(false);
     }
   };
-  
-  useEffect(() => {
-    fetchMedications();
-  }, []);
 
   const handleAddMedication = async () => {
     try {
@@ -45,21 +64,8 @@ function AdminDashboard() {
 
   const handleEditMedication = async (id) => {
     try {
-      const name = prompt('Enter updated medication name:');
-      const expirationDate = prompt('Enter updated expiration date (YYYY-MM-DD):');
-      const price = parseFloat(prompt('Enter updated medication price:'));
-
-      if (!name || !expirationDate || isNaN(price)) {
-        throw new Error('Please provide valid medication details.');
-      }
-
-      const updatedMedication = { name, expirationDate, price };
-      await axios.put(`http://localhost:3000/admin/medications/${id}`, updatedMedication);
-
-      const updatedMedications = medications.map(medication =>
-        medication.id === id ? { ...medication, ...updatedMedication } : medication
-      );
-      setMedications(updatedMedications);
+      const response = await axios.put(`http://localhost:3000/admin/medications/${id}`, medications.find(med => med.id === id));
+      setMedications(medications.map(med => (med.id === id ? response.data : med)));
     } catch (error) {
       console.error(`Error editing medication with ID ${id}:`, error);
       setError(error);
@@ -69,13 +75,25 @@ function AdminDashboard() {
   const handleDeleteMedication = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/admin/medications/${id}`);
-      const updatedMedications = medications.filter(medication => medication.id !== id);
-      setMedications(updatedMedications);
+      setMedications(medications.filter(med => med.id !== id));
     } catch (error) {
       console.error(`Error deleting medication with ID ${id}:`, error);
       setError(error);
     }
   };
+
+  if (!isLoggedIn) {
+    return (
+      <div>
+        <h1>Login</h1>
+        <div>{errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}</div>
+        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <button onClick={handleLogin}>Login</button>
+        <p>Don't have an account? <Link to="/auth/register">Register here</Link>.</p>
+      </div>
+    );
+  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -85,8 +103,12 @@ function AdminDashboard() {
     <div>
       <h1>Admin Dashboard</h1>
       <div>
-        <h2>Manage Medications</h2>
+        <h2>Add Medication</h2>
+        
         <button onClick={handleAddMedication}>Add Medication</button>
+      </div>
+      <div>
+        <h2>Manage Medications</h2>
         <table>
           <thead>
             <tr>
