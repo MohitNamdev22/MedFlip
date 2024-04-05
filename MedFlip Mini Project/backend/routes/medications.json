@@ -1,15 +1,15 @@
 {
   "medications": [
     {
-      "id": 3,
-      "name": "combiflame",
-      "expirationDate": "2025-6-6",
-      "price": 60
-    },
-    {
       "id": 4,
       "name": "crocin advance",
       "expirationDate": "2025-07-12",
+      "quantity": 5
+    },
+    {
+      "id": 5,
+      "name": "neem",
+      "expirationDate": "2025-12-06",
       "quantity": 5
     }
   ]
