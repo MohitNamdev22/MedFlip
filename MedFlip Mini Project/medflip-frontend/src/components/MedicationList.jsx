@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './MedicationList.css'; // Import CSS file for styling
 
 function MedicationList() {
   const [medications, setMedications] = useState([]);
@@ -31,28 +32,17 @@ function MedicationList() {
   }
 
   return (
-    <div>
+    <div className="medication-list">
       <h1>Medication List</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Expiration Date</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          {medications.map(medication => (
-            <tr key={medication.id}>
-              <td>{medication.id}</td>
-              <td>{medication.name}</td>
-              <td>{medication.expirationDate}</td>
-              <td>${medication.price}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="medication-cards">
+        {medications.map(medication => (
+          <div className="medication-card" key={medication.id}>
+            <h2>{medication.name}</h2>
+            <p>Expiration Date: {medication.expirationDate}</p>
+            <p>Price: ${medication.price}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

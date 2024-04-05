@@ -23,6 +23,12 @@
       "name": "BetZ",
       "expirationDate": "2015-12-12",
       "price": 25
+    },
+    {
+      "id": 10,
+      "name": "Crocin 2",
+      "expirationDate": "2025-12-12",
+      "price": 50
     }
   ]
 }
