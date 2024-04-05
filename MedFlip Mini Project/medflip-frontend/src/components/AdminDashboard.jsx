@@ -138,7 +138,7 @@ function AdminDashboard() {
                 <td>{medication.id}</td>
                 <td>{medication.name}</td>
                 <td>{medication.expirationDate}</td>
-                <td>₹{medication.quantity}</td>
+                <td>{medication.quantity}</td>
                 <td>
                   <button onClick={() => handleEditMedication(medication.id)}>Edit</button>
                   <button onClick={() => handleDeleteMedication(medication.id)}>Delete</button>
