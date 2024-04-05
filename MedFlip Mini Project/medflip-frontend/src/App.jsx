@@ -5,6 +5,7 @@ import { RecoilRoot } from 'recoil';
 import LoginForm from './components/LoginForm';
 import RegistrationForm from './components/RegistrationForm';
 import Navbar from './components/NavBar';
+import MedicationList from './components/MedicationList';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
+            <Route path="/" element={<MedicationList/>}/>
             <Route path="/admin/medication" element={<AdminDashboard />} />
             <Route path="/auth/login" element={<LoginForm />} />
             <Route path="/auth/register" element={<RegistrationForm />} />

@@ -64,8 +64,21 @@ function AdminDashboard() {
 
   const handleEditMedication = async (id) => {
     try {
-      const response = await axios.put(`http://localhost:3000/admin/medications/${id}`, medications.find(med => med.id === id));
-      setMedications(medications.map(med => (med.id === id ? response.data : med)));
+      const name = prompt('Enter updated medication name:');
+      const expirationDate = prompt('Enter updated expiration date (YYYY-MM-DD):');
+      const price = parseFloat(prompt('Enter updated medication price:'));
+
+      if (!name || !expirationDate || isNaN(price)) {
+        throw new Error('Please provide valid medication details.');
+      }
+
+      const updatedMedication = { name, expirationDate, price };
+      await axios.put(`http://localhost:3000/admin/medications/${id}`, updatedMedication);
+
+      const updatedMedications = medications.map(medication =>
+        medication.id === id ? { ...medication, ...updatedMedication } : medication
+      );
+      setMedications(updatedMedications);
     } catch (error) {
       console.error(`Error editing medication with ID ${id}:`, error);
       setError(error);
@@ -125,7 +138,7 @@ function AdminDashboard() {
                 <td>{medication.id}</td>
                 <td>{medication.name}</td>
                 <td>{medication.expirationDate}</td>
-                <td>${medication.price}</td>
+                <td>{medication.price}₹</td>
                 <td>
                   <button onClick={() => handleEditMedication(medication.id)}>Edit</button>
                   <button onClick={() => handleDeleteMedication(medication.id)}>Delete</button>

@@ -13,22 +13,16 @@
       "price": 25
     },
     {
+      "id": 8,
+      "name": "combiflame",
+      "expirationDate": "2025-05-05",
+      "price": 50
+    },
+    {
       "id": 9,
-      "name": "mohit",
-      "expirationDate": "12/12/12",
-      "price": "90"
-    },
-    {
-      "id": 10,
-      "name": "cn",
-      "expirationDate": "568",
-      "price": "565"
-    },
-    {
-      "id": 11,
-      "name": "mohit",
-      "expirationDate": "769",
-      "price": 679
+      "name": "BetZ",
+      "expirationDate": "2015-12-12",
+      "price": 25
     }
   ]
 }
