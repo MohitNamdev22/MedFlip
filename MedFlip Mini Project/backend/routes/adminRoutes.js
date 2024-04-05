@@ -34,7 +34,7 @@ router.use(cors())
 
 // Route for adding new medication by admin
 router.post('/medications', (req, res) => {
-  const { name, expirationDate, price } = req.body;
+  const { name, expirationDate, quantity } = req.body;
 
   // Read existing medication data from file
   const { medications } = readDataFromFile();
@@ -43,7 +43,7 @@ router.post('/medications', (req, res) => {
   const id = medications.length > 0 ? Math.max(...medications.map(med => med.id)) + 1 : 1;
 
   // Add new medication to the medications array
-  medications.push({ id, name, expirationDate, price });
+  medications.push({ id, name, expirationDate, quantity });
 
   // Write updated medication data back to file
   writeDataToFile({ medications });
@@ -54,7 +54,7 @@ router.post('/medications', (req, res) => {
 // Route for updating existing medication by admin
 router.put('/medications/:id', (req, res) => {
   const medicationId = parseInt(req.params.id);
-  const { name, expirationDate, price } = req.body;
+  const { name, expirationDate, quantity } = req.body;
 
   // Read existing medication data from file
   const { medications } = readDataFromFile();
@@ -64,7 +64,7 @@ router.put('/medications/:id', (req, res) => {
 
   // Update medication if found
   if (index !== -1) {
-    medications[index] = { id: medicationId, name, expirationDate, price };
+    medications[index] = { id: medicationId, name, expirationDate, quantity };
 
     // Write updated medication data back to file
     writeDataToFile({ medications });

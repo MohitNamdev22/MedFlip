@@ -39,7 +39,7 @@ function MedicationList() {
           <div className="medication-card" key={medication.id}>
             <h2>{medication.name}</h2>
             <p>Expiration Date: {medication.expirationDate}</p>
-            <p>Price: ${medication.price}</p>
+            <p>Price: ₹{medication.price}</p>
           </div>
         ))}
       </div>

@@ -11,7 +11,7 @@ function AdminDashboard() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [newMedication, setNewMedication] = useState({ name: '', expirationDate: '', price: 0 });
+  const [newMedication, setNewMedication] = useState({ name: '', expirationDate: '', quantity: 0 });
 
   const handleLogin = async () => {
     try {
@@ -45,13 +45,13 @@ function AdminDashboard() {
     try {
       const name = prompt('Enter medication name:');
       const expirationDate = prompt('Enter expiration date (YYYY-MM-DD):');
-      const price = parseFloat(prompt('Enter medication price:'));
+      const quantity = parseFloat(prompt('Enter the quantity:'));
 
-      if (!name || !expirationDate || isNaN(price)) {
+      if (!name || !expirationDate || isNaN(quantity)) {
         throw new Error('Please provide valid medication details.');
       }
 
-      const newMedication = { name, expirationDate, price };
+      const newMedication = { name, expirationDate, quantity };
       const response = await axios.post('http://localhost:3000/admin/medications', newMedication);
 
       setMedications([...medications, response.data]);
@@ -66,13 +66,13 @@ function AdminDashboard() {
     try {
       const name = prompt('Enter updated medication name:');
       const expirationDate = prompt('Enter updated expiration date (YYYY-MM-DD):');
-      const price = parseFloat(prompt('Enter updated medication price:'));
+      const quantity = parseFloat(prompt('Enter updated quantity:'));
 
-      if (!name || !expirationDate || isNaN(price)) {
+      if (!name || !expirationDate || isNaN(quantity)) {
         throw new Error('Please provide valid medication details.');
       }
 
-      const updatedMedication = { name, expirationDate, price };
+      const updatedMedication = { name, expirationDate, quantity };
       await axios.put(`http://localhost:3000/admin/medications/${id}`, updatedMedication);
 
       const updatedMedications = medications.map(medication =>
@@ -128,7 +128,7 @@ function AdminDashboard() {
               <th>ID</th>
               <th>Name</th>
               <th>Expiration Date</th>
-              <th>Price</th>
+              <th>Quantity</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -138,7 +138,7 @@ function AdminDashboard() {
                 <td>{medication.id}</td>
                 <td>{medication.name}</td>
                 <td>{medication.expirationDate}</td>
-                <td>{medication.price}₹</td>
+                <td>₹{medication.quantity}</td>
                 <td>
                   <button onClick={() => handleEditMedication(medication.id)}>Edit</button>
                   <button onClick={() => handleDeleteMedication(medication.id)}>Delete</button>
