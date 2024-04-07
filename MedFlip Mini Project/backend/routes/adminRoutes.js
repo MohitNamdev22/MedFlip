@@ -9,8 +9,6 @@ const router = express.Router();
 const dataFilePath = path.join(__dirname, 'medications.json');
 const duplicateDataFilePath = path.join(__dirname, 'medications_with_pricing.json');
 
-
-
 // Function to read medication data from data.json file
 function readDataFromFile(filePath) {
   try {
@@ -21,7 +19,6 @@ function readDataFromFile(filePath) {
     return { medications: [] }; // Ensure that medications property is always present
   }
 }
-
 
 // Function to write medication data to data.json file
 function writeDataToFile(data, filePath) {
@@ -68,7 +65,7 @@ router.put('/medications/:id', (req, res) => {
   const { name, expirationDate, quantity } = req.body;
 
   // Read existing medication data from file
-  const { medications } = readDataFromFile();
+  let { medications } = readDataFromFile(dataFilePath);
 
   // Find the index of the medication in the array
   const index = medications.findIndex(med => med.id === medicationId);
@@ -78,7 +75,8 @@ router.put('/medications/:id', (req, res) => {
     medications[index] = { id: medicationId, name, expirationDate, quantity };
 
     // Write updated medication data back to file
-    writeDataToFile({ medications });
+    writeDataToFile({ medications }, dataFilePath); // Corrected line
+    writeDataToFile({ medications }, duplicateDataFilePath); // Corrected line
 
     res.json({ message: 'Medication updated successfully' });
   } else {
@@ -91,13 +89,14 @@ router.delete('/medications/:id', (req, res) => {
   const medicationId = parseInt(req.params.id);
 
   // Read existing medication data from file
-  let { medications } = readDataFromFile();
+  let { medications } = readDataFromFile(dataFilePath);
 
   // Filter out the medication to be deleted
   medications = medications.filter(med => med.id !== medicationId);
 
   // Write updated medication data back to file
-  writeDataToFile({ medications });
+  writeDataToFile({ medications }, dataFilePath); // Corrected line
+  writeDataToFile({ medications }, duplicateDataFilePath); // Corrected line
 
   res.json({ message: 'Medication deleted successfully' });
 });
@@ -106,6 +105,7 @@ router.delete('/medications/:id', (req, res) => {
 router.get('/medications', (req, res) => {
   // Read existing medication data from file
   console.log("reached")
+  
   const { medications } = readDataFromFile(duplicateDataFilePath);
   res.json(medications);
 });

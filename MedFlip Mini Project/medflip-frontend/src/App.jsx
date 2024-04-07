@@ -6,6 +6,7 @@ import LoginForm from './components/LoginForm';
 import RegistrationForm from './components/RegistrationForm';
 import Navbar from './components/NavBar';
 import MedicationList from './components/MedicationList';
+import Checkout from './components/Checkout';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<MedicationList/>}/>
             <Route path="/admin/medication" element={<AdminDashboard />} />
             <Route path="/auth/login" element={<LoginForm />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/auth/register" element={<RegistrationForm />} />
           </Routes>
         </Router>
