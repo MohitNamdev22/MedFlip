@@ -53,31 +53,36 @@
       "id": 11,
       "name": "mmohit",
       "expirationDate": "123",
-      "quantity": 123
+      "quantity": 123,
+      "price": 0
     },
     {
       "id": 12,
       "name": "abc",
       "expirationDate": "123",
-      "quantity": 123
+      "quantity": 123,
+      "price": 0
     },
     {
       "id": 13,
       "name": "67",
       "expirationDate": "67",
-      "quantity": 67
+      "quantity": 67,
+      "price": 0
     },
     {
       "id": 14,
       "name": "joj",
       "expirationDate": "123",
-      "quantity": 123
+      "quantity": 123,
+      "price": 0
     },
     {
       "id": 15,
       "name": "meds2",
       "expirationDate": "1230",
-      "quantity": 12
+      "quantity": 12,
+      "price": 0
     },
     {
       "id": 16,
@@ -98,7 +103,7 @@
       "name": "mggh",
       "expirationDate": "2025-24-25",
       "quantity": 12,
-      "price": 0
+      "price": 500
     }
   ]
 }

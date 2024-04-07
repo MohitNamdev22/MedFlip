@@ -40,6 +40,7 @@ function MedicationList() {
             <h2>{medication.name}</h2>
             <p>Expiration Date: {medication.expirationDate}</p>
             <p>Quantity:{medication.quantity}</p>
+            <p>Price:{medication.price}</p>
           </div>
         ))}
       </div>

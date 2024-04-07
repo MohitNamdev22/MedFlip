@@ -7,12 +7,14 @@ const router = express.Router();
 
 // Path to the data.json file
 const dataFilePath = path.join(__dirname, 'medications.json');
+const duplicateDataFilePath = path.join(__dirname, 'medications_with_pricing.json');
+
 
 
 // Function to read medication data from data.json file
-function readDataFromFile() {
+function readDataFromFile(filePath) {
   try {
-    const data = fs.readFileSync(dataFilePath, 'utf8');
+    const data = fs.readFileSync(filePath, 'utf8');
     return JSON.parse(data);
   } catch (error) {
     console.error('Error reading data from file:', error);
@@ -22,9 +24,9 @@ function readDataFromFile() {
 
 
 // Function to write medication data to data.json file
-function writeDataToFile(data) {
+function writeDataToFile(data, filePath) {
   try {
-    fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
   } catch (error) {
     console.error('Error writing data to file:', error);
   }
@@ -35,18 +37,27 @@ router.use(cors())
 // Route for adding new medication by admin
 router.post('/medications', (req, res) => {
   const { name, expirationDate, quantity } = req.body;
+  const price = 0;
 
   // Read existing medication data from file
-  const { medications } = readDataFromFile();
+  let { medications } = readDataFromFile(dataFilePath);
 
   // Generate new medication ID
   const id = medications.length > 0 ? Math.max(...medications.map(med => med.id)) + 1 : 1;
 
   // Add new medication to the medications array
-  medications.push({ id, name, expirationDate, quantity });
+  medications.push({ id, name, expirationDate, quantity, price });
 
   // Write updated medication data back to file
-  writeDataToFile({ medications });
+  writeDataToFile({ medications }, dataFilePath);
+
+  let duplicateMedications = [...medications];
+  duplicateMedications.forEach(medication => {
+    medication.price = price; // Add pricing to each medication
+  });
+
+  // Write medication data with pricing to duplicate file
+  writeDataToFile({ medications: duplicateMedications }, duplicateDataFilePath);
 
   res.status(201).json({ message: 'Medication added successfully', id });
 });
@@ -94,7 +105,8 @@ router.delete('/medications/:id', (req, res) => {
 // Route for retrieving all medications
 router.get('/medications', (req, res) => {
   // Read existing medication data from file
-  const { medications } = readDataFromFile();
+  console.log("reached")
+  const { medications } = readDataFromFile(duplicateDataFilePath);
   res.json(medications);
 });
 
