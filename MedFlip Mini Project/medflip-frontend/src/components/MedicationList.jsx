@@ -41,6 +41,7 @@ function MedicationList() {
             <p>Expiration Date: {medication.expirationDate}</p>
             <p>Quantity:{medication.quantity}</p>
             <p>Price:{medication.price}</p>
+            <button onClick="addToCart(medication)">Add to Cart</button>
           </div>
         ))}
       </div>
