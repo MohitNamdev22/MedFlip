@@ -54,7 +54,6 @@ function MedicationList() {
           </div>
         ))}
       </div>
-      <Link to="/checkout">View Cart</Link>
     </div>
   );
 }
