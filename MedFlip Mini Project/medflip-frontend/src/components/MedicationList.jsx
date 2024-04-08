@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'; // Import Link for routing
+import { useCart } from './CartContext'; // Import useCart hook
 import './MedicationList.css'; // Import CSS file for styling
 
 function MedicationList() {
   const [medications, setMedications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (medication) => {
-    setCart([...cart, medication]);
-  };
+  const { addToCart } = useCart(); // Access addToCart function from CartContext
 
   useEffect(() => {
     fetchMedications();
@@ -47,11 +44,11 @@ function MedicationList() {
             <p>Expiration Date: {medication.expirationDate}</p>
             <p>Quantity: {medication.quantity}</p>
             <p>Price: {medication.price}</p>
-            <button onClick={() => addToCart(medication)}>Add to Cart</button>
+            <button onClick={() => addToCart(medication)}>Add to Cart</button> {/* Use addToCart from CartContext */}
           </div>
         ))}
       </div>
-      <Link to={{ pathname: "/checkout", state: { cart } }}>View Cart ({cart.length})</Link> {/* Link to checkout page with cart length */}
+      <Link to="/checkout">View Cart</Link> {/* Link to checkout page */}
     </div>
   );
 }

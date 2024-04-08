@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
+import { FaShoppingCart } from 'react-icons/fa'; // Import cart icon
 import { isAuthenticatedSelector, userNameSelector } from './AuthState';
 import './NavBar.css';
+
+import { useCart } from './CartContext';
 
 function Navbar() {
   const isAuthenticated = useRecoilValue(isAuthenticatedSelector);
   const userName = useRecoilValue(userNameSelector);
   const [isLoaded, setIsLoaded] = useState(false);
+  const { cart } = useCart();
 
   useEffect(() => {
-  console.log("userName state updated:", userName);
-  setIsLoaded(true)
-}, [userName]); // Empty dependency array ensures this effect runs only once after initial mount
+    console.log("userName state updated:", userName);
+    setIsLoaded(true);
+  }, [userName]);
 
   return (
     <nav className="navbar">
@@ -32,9 +36,9 @@ function Navbar() {
           <Link to="/auth/register" className="navbar-link">Register</Link>
         </li>
       </ul>
-      {isLoaded && isAuthenticated && (
-        <div>Hello, {userName}</div>
-      )}
+      <div>
+      <Link to="/checkout" className="navbar-link"><FaShoppingCart/> ({cart.length})</Link>
+      </div>
     </nav>
   );
 }

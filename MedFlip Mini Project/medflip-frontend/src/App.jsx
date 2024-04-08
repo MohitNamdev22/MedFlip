@@ -7,10 +7,12 @@ import RegistrationForm from './components/RegistrationForm';
 import Navbar from './components/NavBar';
 import MedicationList from './components/MedicationList';
 import Checkout from './components/Checkout';
+import { CartProvider } from './components/CartContext';
 
 function App() {
   return (
     <RecoilRoot>
+      <CartProvider>
       <div style={{ width: "100vW", height: "100vh", backgroundColor: "gray" }}>
         <Router>
           <Navbar />
@@ -23,8 +25,11 @@ function App() {
           </Routes>
         </Router>
       </div>
+      </CartProvider>
     </RecoilRoot>
   );
 }
 
 export default App;
+
+
