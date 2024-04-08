@@ -3,7 +3,19 @@ import React from 'react';
 function Checkout() {
   // Retrieve cart items from sessionStorage
   const cartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
-
+  
+  // Calculate total amount of all medicine prices
+  const totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
+  
+  // Calculate shipping amount (assuming it's fixed at Rs. 50)
+  const shippingAmount = 50;
+  
+  // Calculate GST (18% of total amount)
+  const gst = totalAmount * 0.18;
+  
+  // Calculate grand total (total amount + shipping amount + GST)
+  const grandTotal = totalAmount + shippingAmount + gst;
+  
   // Function to remove an item from the cart
   const removeFromCart = (index) => {
     const updatedCart = [...cartItems];
@@ -35,7 +47,15 @@ function Checkout() {
           ))}
         </ul>
       </div>
+      <div>
+        <h2>Payment Details:</h2>
+        <p>Total Amount: {totalAmount}</p>
+        <p>Shipping Amount: {shippingAmount}</p>
+        <p>GST: {gst}</p>
+        <p>Grand Total: {grandTotal}</p>
+      </div>
       <button onClick={clearCart}>Clear Cart</button> {/* Button to clear the entire cart */}
+      <button>Proceed to Payment</button> {/* Button to proceed with payment */}
       {/* Add checkout form or further checkout steps here */}
     </div>
   );

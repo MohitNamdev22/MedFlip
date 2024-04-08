@@ -1,32 +1,46 @@
 {
   "medications": [
     {
-      "id": 4,
-      "name": "crocin advance",
-      "expirationDate": "2025-07-12",
+      "id": 1,
+      "name": "Acemiz ",
+      "expirationDate": "2025-06-06",
       "quantity": 5,
-      "price": 0
+      "price": 100
+    },
+    {
+      "id": 2,
+      "name": "Acton",
+      "expirationDate": "2026-01-01",
+      "quantity": 10,
+      "price": 75
+    },
+    {
+      "id": 3,
+      "name": "Calpol",
+      "expirationDate": "2025-10-10",
+      "quantity": 10,
+      "price": 50
+    },
+    {
+      "id": 4,
+      "name": "Dolo",
+      "expirationDate": "2026-01-07",
+      "quantity": 3,
+      "price": 30
     },
     {
       "id": 5,
-      "name": "neem",
-      "expirationDate": "2025-12-06",
+      "name": "Lupirtin Tablet",
+      "expirationDate": "2024-12-04",
       "quantity": 5,
-      "price": 0
+      "price": 50
     },
     {
       "id": 6,
-      "name": "combiflame",
-      "expirationDate": "2025-5-5",
+      "name": "crocin",
+      "expirationDate": "2025-12-23",
       "quantity": 5,
-      "price": 0
-    },
-    {
-      "id": 7,
-      "name": "Disprine",
-      "expirationDate": "2025-05-06",
-      "quantity": 5,
-      "price": 0
+      "price": 50
     }
   ]
 }
