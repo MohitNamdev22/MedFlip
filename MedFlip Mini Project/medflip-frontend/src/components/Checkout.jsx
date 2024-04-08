@@ -12,6 +12,12 @@ function Checkout() {
     window.location.reload(); // Refresh the page to reflect the changes
   };
 
+  // Function to clear the entire cart
+  const clearCart = () => {
+    sessionStorage.removeItem('cart'); // Remove cart data from sessionStorage
+    window.location.reload(); // Refresh the page to reflect the changes
+  };
+
   return (
     <div>
       <h1>Checkout</h1>
@@ -29,6 +35,7 @@ function Checkout() {
           ))}
         </ul>
       </div>
+      <button onClick={clearCart}>Clear Cart</button> {/* Button to clear the entire cart */}
       {/* Add checkout form or further checkout steps here */}
     </div>
   );
