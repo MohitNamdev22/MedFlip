@@ -10,6 +10,12 @@ function MedicationList() {
   const [error, setError] = useState(null);
   const { addToCart } = useCart(); // Access addToCart function from CartContext
 
+  const addToCartSession = (medication)=>{
+    const existingCart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    const updatedCart = [...existingCart, medication];
+    sessionStorage.setItem('cart',JSON.stringify(updatedCart));
+  };
+  
   useEffect(() => {
     fetchMedications();
   }, []);
@@ -44,11 +50,11 @@ function MedicationList() {
             <p>Expiration Date: {medication.expirationDate}</p>
             <p>Quantity: {medication.quantity}</p>
             <p>Price: {medication.price}</p>
-            <button onClick={() => addToCart(medication)}>Add to Cart</button> {/* Use addToCart from CartContext */}
+            <button onClick={() => {addToCart(medication); addToCartSession(medication);}}>Add to Cart</button> {/* Use addToCart from CartContext */}
           </div>
         ))}
       </div>
-      <Link to="/checkout">View Cart</Link> {/* Link to checkout page */}
+      <Link to="/checkout">View Cart</Link>
     </div>
   );
 }

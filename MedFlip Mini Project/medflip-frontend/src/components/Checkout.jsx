@@ -1,9 +1,16 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom'; // Import useLocation to access location state
 
 function Checkout() {
-  const location = useLocation(); // Get the location object
-  const cart = location.state && location.state.cart; // Check if location state exists before accessing cart
+  // Retrieve cart items from sessionStorage
+  const cartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+  // Function to remove an item from the cart
+  const removeFromCart = (index) => {
+    const updatedCart = [...cartItems];
+    updatedCart.splice(index, 1); // Remove item at the specified index
+    sessionStorage.setItem('cart', JSON.stringify(updatedCart)); // Update sessionStorage with the modified cart
+    window.location.reload(); // Refresh the page to reflect the changes
+  };
 
   return (
     <div>
@@ -11,12 +18,13 @@ function Checkout() {
       <div>
         <h2>Selected Products:</h2>
         <ul>
-          {cart && cart.map((item, index) => (
+          {cartItems.map((item, index) => (
             <li key={index}>
               <p>Name: {item.name}</p>
               <p>Expiration Date: {item.expirationDate}</p>
               <p>Quantity: {item.quantity}</p>
               <p>Price: {item.price}</p>
+              <button onClick={() => removeFromCart(index)}>Remove</button> {/* Button to remove the item */}
             </li>
           ))}
         </ul>
