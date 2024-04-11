@@ -19,6 +19,7 @@
     background-color: #007f00; /* Dark green color for buttons */
     color: #fff;
     border: none;
+    margin: 0.5rem;
     border-radius: 4px;
     padding: 10px 20px;
     cursor: pointer;

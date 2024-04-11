@@ -116,13 +116,12 @@ function AdminDashboard() {
 
   return (
     <div>
-      <h1>Admin Dashboard</h1>
-      <div>
-        <h2>Add Medication</h2>
-        
-        <button onClick={handleAddMedication}>Add Medication</button>
-      </div>
+      <h1 className='admin-heading'>Admin Dashboard</h1>
       <div className="admin-container">
+      <div>
+        <h2 className='admin-heading'>Add Medication</h2>
+        <button className='admin-button' onClick={handleAddMedication}>Add Medication</button>
+      </div>
   <h2 className="admin-heading">Manage Medications</h2>
   <table className="admin-table">
     <thead>
