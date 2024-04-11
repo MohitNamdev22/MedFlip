@@ -72,12 +72,17 @@
   }
 
   .login-link:hover{
-    color: #45a049;
+    color: black;
 
   }
 
   .register-text{
     color: black;
     display: flex;
+  }
+
+  .register-text a{
+    color: #45a049;
+    font-weight: 400;
   }
 

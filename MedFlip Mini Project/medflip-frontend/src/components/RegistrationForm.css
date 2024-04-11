@@ -58,4 +58,10 @@
 
 .registration-link {
     color: #4CAF50;
+    transition: 0.2s ease-in-out;
+
+}
+
+.registration-link:hover{
+    color:black;
 }
