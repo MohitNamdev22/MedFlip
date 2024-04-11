@@ -60,6 +60,15 @@
   .payment-details {
     margin-top: 40px;
     font-weight: 500;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .payment-detail{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    margin-right: 5rem;
   }
   
   .payment-details p {
