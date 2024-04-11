@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useRecoilValue } from 'recoil';
 import { Navigate, Link } from 'react-router-dom';
 import './LoginForm.css'
+import './AdminDashboard.css'
 
 function AdminDashboard() {
   const [medications, setMedications] = useState([]);
@@ -121,34 +122,35 @@ function AdminDashboard() {
         
         <button onClick={handleAddMedication}>Add Medication</button>
       </div>
-      <div>
-        <h2>Manage Medications</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Expiration Date</th>
-              <th>Quantity</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {medications.map(medication => (
-              <tr key={medication.id}>
-                <td>{medication.id}</td>
-                <td>{medication.name}</td>
-                <td>{medication.expirationDate}</td>
-                <td>{medication.quantity}</td>
-                <td>
-                  <button onClick={() => handleEditMedication(medication.id)}>Edit</button>
-                  <button onClick={() => handleDeleteMedication(medication.id)}>Delete</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <div className="admin-container">
+  <h2 className="admin-heading">Manage Medications</h2>
+  <table className="admin-table">
+    <thead>
+      <tr>
+        <th className="admin-table-header">ID</th>
+        <th className="admin-table-header">Name</th>
+        <th className="admin-table-header">Expiration Date</th>
+        <th className="admin-table-header">Quantity</th>
+        <th className="admin-table-header">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {medications.map(medication => (
+        <tr key={medication.id}>
+          <td className="admin-table-data">{medication.id}</td>
+          <td className="admin-table-data">{medication.name}</td>
+          <td className="admin-table-data">{medication.expirationDate}</td>
+          <td className="admin-table-data">{medication.quantity}</td>
+          <td className="admin-table-data">
+            <button className="admin-button" onClick={() => handleEditMedication(medication.id)}>Edit</button>
+            <button className="admin-button" onClick={() => handleDeleteMedication(medication.id)}>Delete</button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
     </div>
   );
 }
