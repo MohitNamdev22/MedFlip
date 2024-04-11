@@ -14,7 +14,7 @@ function App() {
   return (
     <RecoilRoot>
       <CartProvider>
-      <div style={{ width: "100vW", height: "100vh", backgroundColor: "gray" }}>
+      <div style={{ width: "100vW", height: "100vh", backgroundColor: "rgb(233 233 233);" }}>
         <Router>
           <Navbar />
           <Routes>

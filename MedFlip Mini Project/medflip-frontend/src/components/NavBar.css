@@ -1,32 +1,37 @@
 .navbar {
-    background: rgba(255, 255, 255, 0.2); /* Glass morph effect */
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
-  }
-  
-  .navbar-list {
-    list-style-type: none;
-    display: flex;
-  }
-  
-  .navbar-list li {
-    margin-right: 20px;
-  }
-  
-  .navbar-link {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-link:hover {
-    color: #ffcc00; /* Change color on hover */
-  }
-  
+  background: rgba(0, 128, 0, 0.2); /* Using a green color for the background with some transparency */
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-list {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-list li {
+  margin-right: 20px;
+}
+
+.navbar-link {
+  color: #fff; /* White color for the text */
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #ffcc00; /* Yellow color for the text on hover */
+}
+
+.navbar-link svg {
+  margin-right: 5px;
+}
