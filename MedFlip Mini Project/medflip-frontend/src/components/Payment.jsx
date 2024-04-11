@@ -58,15 +58,15 @@ function Payment() {
       <div className="payment-details">
         {/* Payment type selection */}
         <h2>Select Payment Type:</h2>
-        <label className="payment-label">
+        <label className="payment-option">
           <input type="radio" name="paymentType" value="Credit Card" onChange={() => setPaymentType('Credit Card')} />
           Credit Card
         </label>
-        <label className="payment-label">
+        <label className="payment-option">
           <input type="radio" name="paymentType" value="Debit Card" onChange={() => setPaymentType('Debit Card')} />
           Debit Card
         </label>
-        <label className="payment-label">
+        <label className="payment-option">
           <input type="radio" name="paymentType" value="Net Banking" onChange={() => setPaymentType('Net Banking')} />
           Net Banking
         </label>

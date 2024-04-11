@@ -1,5 +1,5 @@
 .navbar {
-  background: rgba(0, 128, 0, 0.2); /* Using a green color for the background with some transparency */
+  background: #4CAF50; /* Using a green color for the background with some transparency */
   backdrop-filter: blur(10px);
   padding: 20px;
   display: flex;
