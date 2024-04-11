@@ -65,6 +65,11 @@
   .payment-details p {
     margin: 10px 0;
   }
+
+  .payment-details h2 p{
+    text-align: right;
+    align-items: flex-end;
+  }
   
   .clear-cart-button {
     background-color: rgb(252, 87, 87);

@@ -45,12 +45,25 @@ function Checkout() {
         </ul>
       </div>
       <div className="payment-details">
-        <h2>Payment Details:</h2>
-        <p>Total Amount: {totalAmount}</p>
-        <p>Shipping Amount: {shippingAmount}</p>
-        <p>GST: {gst}</p>
-        <p>Grand Total: {grandTotal}</p>
-      </div>
+  <h2>Payment Details:</h2>
+  <div className="payment-detail">
+    <p>Total Amount:</p>
+    <p>₹{totalAmount}</p>
+  </div>
+  <div className="payment-detail">
+    <p>Shipping Amount:</p>
+    <p>₹{shippingAmount}</p>
+  </div>
+  <div className="payment-detail">
+    <p>GST:</p>
+    <p>₹{gst}</p>
+  </div>
+  <div className="payment-detail">
+    <p>Grand Total:</p>
+    <p>₹{grandTotal}</p>
+  </div>
+</div>
+
       <button className="clear-cart-button" onClick={clearCart}>Clear Cart</button>
       <button className="proceed-button" onClick={proceedToPayment}>Proceed to Payment</button>
     </div>
