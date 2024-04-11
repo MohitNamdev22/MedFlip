@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRecoilValue } from 'recoil';
 import { Navigate, Link } from 'react-router-dom';
+import './LoginForm.css'
 
 function AdminDashboard() {
   const [medications, setMedications] = useState([]);
@@ -97,13 +98,13 @@ function AdminDashboard() {
 
   if (!isLoggedIn) {
     return (
-      <div>
-        <h1>Login</h1>
-        <div>{errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}</div>
-        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <button onClick={handleLogin}>Login</button>
-        <p>Don't have an account? <Link to="/auth/register">Register here</Link>.</p>
+      <div className='login-container'>
+        <h1 className='login-heading'>Login</h1>
+        <div className='register-text'>{errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}</div>
+        <div><label className="login-label">Username:</label><input className="login-input" type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} /></div>
+        <div><label className="login-label">Password:</label><input className="login-input" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} /></div>
+        <button onClick={handleLogin} className='login-button'>Login</button>
+        <p className='register-text'>Don't have an account? <Link to="/auth/register" className='login-link'>Register here</Link></p>
       </div>
     );
   }

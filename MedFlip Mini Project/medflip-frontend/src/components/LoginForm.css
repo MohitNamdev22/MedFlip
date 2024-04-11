@@ -32,7 +32,7 @@
     color: #666;
   }
   
-  .login-form input {
+  .login-input {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -84,5 +84,10 @@
   .register-text a{
     color: #45a049;
     font-weight: 400;
+  }
+
+  .login-label{
+    color: black;
+    margin: 1rem 1rem;
   }
 
