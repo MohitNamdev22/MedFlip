@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Checkout.css'
 
 function Checkout() {
   const navigate = useNavigate();
@@ -28,31 +29,30 @@ function Checkout() {
   };
 
   return (
-    <div>
-      <h1>Checkout</h1>
+    <div className="checkout-container">
+      <h1 className="checkout-heading">Checkout</h1>
       <div>
         <h2>Selected Products:</h2>
-        <ul>
+        <ul className="checkout-list">
           {cartItems.map((item, index) => (
-            <li key={index}>
-              <p>Name: {item.name}</p>
-              <p>Expiration Date: {item.expirationDate}</p>
-              <p>Quantity: {item.quantity}</p>
-              <p>Price: {item.price}</p>
+            <li key={index} className="checkout-item">
+              <p><b>{item.name}</b></p>
+              <p>Expiration Date : {item.expirationDate}</p>
+              <p className='price'>₹{item.price}</p>
               <button onClick={() => removeFromCart(index)}>Remove</button>
             </li>
           ))}
         </ul>
       </div>
-      <div>
+      <div className="payment-details">
         <h2>Payment Details:</h2>
         <p>Total Amount: {totalAmount}</p>
         <p>Shipping Amount: {shippingAmount}</p>
         <p>GST: {gst}</p>
         <p>Grand Total: {grandTotal}</p>
       </div>
-      <button onClick={clearCart}>Clear Cart</button>
-      <button onClick={proceedToPayment}>Proceed to Payment</button>
+      <button className="clear-cart-button" onClick={clearCart}>Clear Cart</button>
+      <button className="proceed-button" onClick={proceedToPayment}>Proceed to Payment</button>
     </div>
   );
 }
