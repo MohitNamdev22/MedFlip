@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './RegistrationForm.css'
 
 function RegistrationForm() {
   const [username, setUsername] = useState('');
@@ -22,31 +23,34 @@ function RegistrationForm() {
   };
 
   return (
-    <div>
-      <h2>Registration Form</h2>
-      <form onSubmit={handleSubmit}>
+    <div className='registration-container'>
+      <h2 className='registration-heading'>Registration Form</h2>
+      <form className='registration-form' onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username" className='registration-label'>Username:</label>
           <input
             type="text"
             id="username"
+            name='username'
             value={username}
+            className='registration-input'
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
+          <label className='registration-label' htmlFor="password">Password:</label>
           <input
             type="password"
             id="password"
             value={password}
+            className='registration-input'
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Register</button>
+        <button type="submit" className='registration-button'>Register</button>
       </form>
-      {message && <p>{message}</p>}
-      <p>Already have an account? <Link to="/auth/login">Login here</Link></p>
+      {message && <p className='registration-message'>{message}</p>}
+      <p>Already have an account? <Link to="/auth/login" className='registration-link'>Login here</Link></p>
     </div>
   );
 }
