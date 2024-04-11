@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import "./LoginForm.css"; // Import CSS file
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -31,33 +32,35 @@ function LoginForm() {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      {error && <div style={{ color: 'red' }}>{error}</div>}
-      <form onSubmit={handleSubmit}>
+    <div className="login-container"> {/* Apply container class */}
+      <h2 className="login-heading">Login</h2> {/* Apply heading class */}
+      {error && <div className="login-error">{error}</div>} {/* Apply error class */}
+      <form onSubmit={handleSubmit} className="login-form"> {/* Apply form class */}
         <div>
-          <label>Username:</label>
+          <label className="login-label">Username:</label> {/* Apply label class */}
           <input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
+            className="login-input" 
           />
         </div>
         <div>
-          <label>Password:</label>
+          <label className="login-label">Password:</label> {/* Apply label class */}
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            className="login-input" 
           />
         </div>
-        <button type="submit" disabled={loading}>
+        <button type="submit" disabled={loading} className="login-button"> {/* Apply button class */}
           {loading ? 'Logging in...' : 'Login'}
         </button>
       </form>
-      <p>Register for a new User? <Link to="/auth/register">Register here</Link> </p>
+      <p>Register for a new User? <Link to="/auth/register" className="login-link">Register here</Link> </p> {/* Apply link class */}
     </div>
   );
 }

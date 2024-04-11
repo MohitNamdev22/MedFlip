@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // Import Link for routing
 import { useCart } from './CartContext'; // Import useCart hook
 import './MedicationList.css'; // Import CSS file for styling
 
@@ -42,7 +41,7 @@ function MedicationList() {
 
   return (
     <div className="medication-list">
-      <h1>Medication List</h1>
+      <h1 className="medication-heading">Medication List</h1>
       <div className="medication-cards">
         {medications.map(medication => (
           <div className="medication-card" key={medication.id}>
@@ -50,7 +49,7 @@ function MedicationList() {
             <p>Expiration Date: {medication.expirationDate}</p>
             <p>Quantity: {medication.quantity}</p>
             <p>Price: {medication.price}</p>
-            <button onClick={() => {addToCart(medication); addToCartSession(medication);}}>Add to Cart</button> {/* Use addToCart from CartContext */}
+            <button className="add-to-cart-button" onClick={() => {addToCart(medication); addToCartSession(medication);}}>Add to Cart</button> {/* Use addToCart from CartContext */}
           </div>
         ))}
       </div>

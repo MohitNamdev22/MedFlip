@@ -1,4 +1,3 @@
-/* Payment container */
 .payment-container {
     max-width: 600px;
     margin: 0 auto;
@@ -7,29 +6,39 @@
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: black;
   }
   
-  /* Payment form styling */
-  .payment-form {
+  .payment-heading {
+    font-size: 24px;
+    text-align: center;
     margin-bottom: 20px;
   }
   
-  .payment-form label {
+  .payment-details {
+    margin-bottom: 20px;
+  }
+  
+  .payment-label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
   }
   
-  .payment-form input {
+  .payment-input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
   
-  /* Pay button */
-  .pay-btn {
+  .payment-total {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .payment-button {
     display: block;
     width: 100%;
     padding: 15px;
@@ -42,15 +51,11 @@
     text-align: center;
   }
   
-  /* Success message */
-  .success-msg {
-    margin-top: 20px;
-    color: #4CAF50;
+  .payment-button:hover {
+    background-color: #45a049;
   }
   
-  /* Error message */
-  .error-msg {
-    margin-top: 20px;
-    color: #f44336;
+  .payment-button:active {
+    background-color: #3e8e41;
   }
   

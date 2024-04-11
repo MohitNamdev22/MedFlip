@@ -8,6 +8,7 @@ import Navbar from './components/NavBar';
 import MedicationList from './components/MedicationList';
 import Checkout from './components/Checkout';
 import { CartProvider } from './components/CartContext';
+import  Payment  from './components/Payment'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/auth/login" element={<LoginForm />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/auth/register" element={<RegistrationForm />} />
+            <Route path="/payment" element={<Payment />} />
           </Routes>
         </Router>
       </div>
