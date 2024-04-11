@@ -4,8 +4,10 @@
     max-width: 400px;
     display: grid;
     justify-content: center;
+    text-align: center;
+    justify-items: center;
     align-items: center;
-    margin: 6rem 10rem;
+    margin: 9rem auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -61,3 +63,21 @@
     margin-top: 10px;
   }
   
+  .login-link{
+    display: flex;
+    color: black;
+    justify-content: center;
+    transition: 0.2s ease-in-out;
+    margin-left:0.4rem;
+  }
+
+  .login-link:hover{
+    color: #45a049;
+
+  }
+
+  .register-text{
+    color: black;
+    display: flex;
+  }
+

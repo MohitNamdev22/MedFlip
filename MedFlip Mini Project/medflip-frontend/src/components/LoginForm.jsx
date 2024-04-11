@@ -60,7 +60,7 @@ function LoginForm() {
           {loading ? 'Logging in...' : 'Login'}
         </button>
       </form>
-      <p>Register for a new User? <Link to="/auth/register" className="login-link">Register here</Link> </p> {/* Apply link class */}
+      <p className='register-text'>Register for a new User? <Link to="/auth/register" className="login-link">Register here</Link> </p> {/* Apply link class */}
     </div>
   );
 }
