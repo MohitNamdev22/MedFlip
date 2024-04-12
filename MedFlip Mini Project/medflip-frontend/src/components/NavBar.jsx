@@ -4,6 +4,7 @@ import { useRecoilValue } from 'recoil';
 import { FaShoppingCart } from 'react-icons/fa'; // Import cart icon
 import { isAuthenticatedSelector, userNameSelector } from './AuthState';
 import './NavBar.css';
+import logo from '../assets/logo.png'
 
 import { useCart } from './CartContext';
 
@@ -20,6 +21,9 @@ function Navbar() {
 
   return (
     <nav className="navbar">
+      <div className='navbar-logo'>
+          <img src={logo} alt="MedFlip" />
+        </div>
       <ul className="navbar-list">
         <li>
           <Link to="/" className="navbar-link">Home</Link>

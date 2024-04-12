@@ -1,11 +1,11 @@
 .navbar {
-  background: #4CAF50; /* Using a green color for the background with some transparency */
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #4CAF50;
+    backdrop-filter: blur(10px);
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-list {
@@ -34,4 +34,15 @@
 
 .navbar-link svg {
   margin-right: 5px;
+}
+
+.navbar-logo{
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar-logo img{
+  height: 100px;
+  width: auto;
 }
