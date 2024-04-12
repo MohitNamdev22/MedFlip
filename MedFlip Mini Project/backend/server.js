@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const bodyParser = require('body-parser');
 const adminRoutes = require('./routes/adminRoutes');
@@ -10,7 +9,6 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-// Routes
 app.use('/admin', adminRoutes);
 app.use('/auth', authRoutes);
 app.use(errorRoutes);
