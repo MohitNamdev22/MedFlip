@@ -27,7 +27,7 @@ function App() {
             </Routes>
           </Router>
           {/* Copyright and developer statement */}
-          <div style={{ textAlign: "center", padding: "5px 0px", height:"50px", backgroundColor: "#333", color: "#fff" }}>
+          <div style={{ textAlign: "center", padding: "5px", height:"50px", backgroundColor: "#333", color: "#fff" }}>
           © 2024 All rights reserved<br></br>Designed & Developed by{' '}
           <a href="https://github.com/MohitNamdev22" style={{ fontWeight: "bold", color: "#fff", textDecoration: "none" }}>
               Mohit Namdev
