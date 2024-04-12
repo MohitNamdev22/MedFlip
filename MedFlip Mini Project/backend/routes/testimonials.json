@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "message": "Great experience with the product!",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "message": "Highly recommend!",
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "name": "Mohit Namdev",
+    "message": "Very Nice UI"
+  }
+]
