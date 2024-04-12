@@ -41,7 +41,7 @@ function MedicationList() {
 
   return (
     <div className="medication-list">
-      <h1 className="medication-heading">Medication List</h1>
+      <h1 className="medication-heading">MediFlip Store</h1>
       <div className="medication-cards">
         {medications.map(medication => (
           <div className="medication-card" key={medication.id}>
