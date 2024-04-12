@@ -1,0 +1,55 @@
+/* Testimonial.css */
+
+.testimonial-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    color: black;
+  }
+  
+  .testimonial-container h2 {
+    color: #333; /* Adjust to your color scheme */
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; /* Adjust to your color scheme */
+  }
+
+  .form-group input{
+    padding: 0.5rem;
+  }
+  
+  
+  textarea {
+    height: 100px;
+    padding: 0.5rem;
+  }
+  
+  button {
+    background-color: #646cff; /* Adjust to your color scheme */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #535bf2; /* Adjust to your color scheme */
+  }
+  
+  .error-message {
+    color: #ff0000; /* Adjust to your color scheme */
+  }
+  

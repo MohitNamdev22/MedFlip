@@ -9,6 +9,7 @@ import MedicationList from './components/MedicationList';
 import Checkout from './components/Checkout';
 import { CartProvider } from './components/CartContext';
 import  Payment  from './components/Payment'
+import Testimonial from './components/Testimonial';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/auth/register" element={<RegistrationForm />} />
               <Route path="/payment" element={<Payment />} />
+              <Route path='/Testimonial' element={<Testimonial/>}/>
             </Routes>
           </Router>
           {/* Copyright and developer statement */}

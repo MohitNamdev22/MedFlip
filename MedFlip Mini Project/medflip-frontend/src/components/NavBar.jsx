@@ -39,6 +39,9 @@ function Navbar() {
         <li>
           <Link to="/auth/register" className="navbar-link">Register</Link>
         </li>
+        <li>
+          <Link to="/testimonial" className="navbar-link">Testimonials</Link>
+        </li>
       </ul>
       <div>
       <Link to="/checkout" className="navbar-link"><FaShoppingCart/> ({cart.length})</Link>
