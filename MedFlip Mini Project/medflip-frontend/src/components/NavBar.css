@@ -20,7 +20,7 @@
 }
 
 .navbar-link {
-  color: #fff; /* White color for the text */
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
   display: flex;
@@ -29,7 +29,7 @@
 }
 
 .navbar-link:hover {
-  color: #ffcc00; /* Yellow color for the text on hover */
+  color: #ffcc00;
 }
 
 .navbar-link svg {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
-import { FaShoppingCart } from 'react-icons/fa'; // Import cart icon
+import { FaShoppingCart } from 'react-icons/fa';
 import { isAuthenticatedSelector, userNameSelector } from './AuthState';
 import './NavBar.css';
 import logo from '../assets/logo.png'

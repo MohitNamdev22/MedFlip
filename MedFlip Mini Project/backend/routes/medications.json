@@ -48,6 +48,13 @@
       "expirationDate": "12-12-12",
       "quantity": 1,
       "price": 0
+    },
+    {
+      "id": 8,
+      "name": "parcetamol",
+      "expirationDate": "2025-06-06",
+      "quantity": 5,
+      "price": 0
     }
   ]
 }

@@ -17,7 +17,7 @@ function AdminDashboard() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', { username, password });
+      const response = await axios.post('https://backend-medflip.onrender.com/auth/login', { username, password });
       setIsLoggedIn(true);
     } catch (error) {
       console.error('Login failed:', error);
@@ -33,7 +33,7 @@ function AdminDashboard() {
 
   const fetchMedications = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/admin/medications');
+      const response = await axios.get('https://backend-medflip.onrender.com/admin/medications');
       setMedications(response.data);
       setLoading(false);
     } catch (error) {
@@ -54,7 +54,7 @@ function AdminDashboard() {
       }
 
       const newMedication = { name, expirationDate, quantity };
-      const response = await axios.post('http://localhost:3000/admin/medications', newMedication);
+      const response = await axios.post('https://backend-medflip.onrender.com/admin/medications', newMedication);
 
       setMedications([...medications, response.data]);
       await fetchMedications();
@@ -75,7 +75,7 @@ function AdminDashboard() {
       }
 
       const updatedMedication = { name, expirationDate, quantity };
-      await axios.put(`http://localhost:3000/admin/medications/${id}`, updatedMedication);
+      await axios.put(`https://backend-medflip.onrender.com/admin/medications/${id}`, updatedMedication);
 
       const updatedMedications = medications.map(medication =>
         medication.id === id ? { ...medication, ...updatedMedication } : medication
@@ -89,7 +89,7 @@ function AdminDashboard() {
 
   const handleDeleteMedication = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/admin/medications/${id}`);
+      await axios.delete(`https://backend-medflip.onrender.com/admin/medications/${id}`);
       setMedications(medications.filter(med => med.id !== id));
     } catch (error) {
       console.error(`Error deleting medication with ID ${id}:`, error);

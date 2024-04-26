@@ -16,7 +16,7 @@ function Testimonial() {
 
   const fetchTestimonials = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/admin/testimonials'); // Adjust the URL accordingly
+      const response = await axios.get('https://backend-medflip.onrender.com/admin/testimonials'); 
       setTestimonials(response.data);
       setLoading(false);
     } catch (error) {
@@ -29,11 +29,11 @@ function Testimonial() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/admin/testimonials', { name, message }); // Adjust the URL accordingly
+      await axios.post('https://backend-medflip.onrender.com/admin/testimonials', { name, message }); 
       setSubmitted(true);
       setName('');
       setMessage('');
-      fetchTestimonials(); // Refresh testimonials after submission
+      fetchTestimonials(); 
     } catch (error) {
       setError('Failed to submit testimonial. Please try again later.');
     }

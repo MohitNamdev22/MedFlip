@@ -15,14 +15,9 @@ function Payment() {
   const [pincode, setPincode] = useState('');
   const [paymentType, setPaymentType] = useState('');
 
-  // Function to handle payment processing
   const handlePayment = () => {
-    // Simulate payment processing
     setTimeout(() => {
-      // Set payment status to success
-      // Here you can implement actual payment processing logic
       alert('Payment successful!');
-      // Redirect to home page after successful payment
       navigate('/');
     }, 2000);
   };
@@ -31,7 +26,6 @@ function Payment() {
     <div className="payment-container">
       <h1 className="payment-heading">Payment</h1>
       <div className="payment-details">
-        {/* User details form */}
         <h2>Enter Your Details:</h2>
         <label className="payment-label">
           Name:
@@ -51,12 +45,10 @@ function Payment() {
         </label>
       </div>
       <div className="payment-details">
-        {/* Display grand total */}
         <h2>Grand Total:</h2>
         <p className="payment-total">₹{grandTotal}</p>
       </div>
       <div className="payment-details">
-        {/* Payment type selection */}
         <h2>Select Payment Type:</h2>
         <label className="payment-option">
           <input type="radio" name="paymentType" value="Credit Card" onChange={() => setPaymentType('Credit Card')} />

@@ -8,7 +8,7 @@
   }
   
   .testimonial-container h2 {
-    color: #333; /* Adjust to your color scheme */
+    color: #333; 
   }
   
   .form-group {
@@ -21,7 +21,7 @@
   .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: #555; /* Adjust to your color scheme */
+    color: #555;
   }
 
   .form-group input{
@@ -35,7 +35,7 @@
   }
   
   button {
-    background-color: #646cff; /* Adjust to your color scheme */
+    background-color: #646cff; 
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -46,10 +46,10 @@
   }
   
   button:hover {
-    background-color: #535bf2; /* Adjust to your color scheme */
+    background-color: #535bf2; 
   }
   
   .error-message {
-    color: #ff0000; /* Adjust to your color scheme */
+    color: #ff0000; 
   }
   

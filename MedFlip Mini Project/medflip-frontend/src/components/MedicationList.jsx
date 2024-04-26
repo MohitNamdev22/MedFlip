@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useCart } from './CartContext'; // Import useCart hook
-import './MedicationList.css'; // Import CSS file for styling
+import { useCart } from './CartContext'; 
+import './MedicationList.css'; 
 
 function MedicationList() {
   const [medications, setMedications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { addToCart } = useCart(); // Access addToCart function from CartContext
+  const { addToCart } = useCart();
 
   const addToCartSession = (medication)=>{
     const existingCart = JSON.parse(sessionStorage.getItem('cart')) || [];
@@ -21,7 +21,7 @@ function MedicationList() {
 
   const fetchMedications = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/admin/medications'); // Adjust the URL accordingly
+      const response = await axios.get('https://backend-medflip.onrender.com/admin/medications'); 
       setMedications(response.data);
       setLoading(false);
     } catch (error) {
@@ -49,7 +49,7 @@ function MedicationList() {
             <p>Expiration Date: {medication.expirationDate}</p>
             <p>Quantity: {medication.quantity}</p>
             <p>Price: {medication.price}</p>
-            <button className="add-to-cart-button" onClick={() => {addToCart(medication); addToCartSession(medication);}}>Add to Cart</button> {/* Use addToCart from CartContext */}
+            <button className="add-to-cart-button" onClick={() => {addToCart(medication); addToCartSession(medication);}}>Add to Cart</button>
           </div>
         ))}
       </div>

@@ -24,7 +24,6 @@ function Checkout() {
   };
 
   const proceedToPayment = () => {
-    // Navigate to the payment page with the grand total as query parameter
     navigate(`/payment?total=${grandTotal}`);
   };
 

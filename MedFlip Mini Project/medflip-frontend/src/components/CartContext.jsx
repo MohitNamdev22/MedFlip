@@ -10,7 +10,7 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (medication) => {
-    setCart(prevCart => [...prevCart, medication]); // Update cart state with the new item
+    setCart(prevCart => [...prevCart, medication]);
   };
 
   const removeFromCart = (medicationId) => {
