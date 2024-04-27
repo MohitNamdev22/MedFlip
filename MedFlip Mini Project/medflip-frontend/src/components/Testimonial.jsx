@@ -61,7 +61,7 @@ function Testimonial() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="message">Your Message:</label>
+            <label htmlFor="message">Your Testimonial:</label>
             <textarea
               id="message"
               value={message}
