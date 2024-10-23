@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "name": "John Doe",
+    "name": "Joseph",
     "message": "Great experience with the product!",
     "rating": 5
   },
   {
     "id": 2,
-    "name": "Jane Smith",
+    "name": "Mike",
     "message": "Highly recommend!",
     "rating": 4
   },
@@ -15,20 +15,5 @@
     "id": 3,
     "name": "Mohit Namdev",
     "message": "Very Nice UI"
-  },
-  {
-    "id": 4,
-    "name": "naksh pratap",
-    "message": "acha app hai"
-  },
-  {
-    "id": 5,
-    "name": "mustafa",
-    "message": "very nice functionality"
-  },
-  {
-    "id": 6,
-    "name": "mansij gupta",
-    "message": "bohot he shandaar app hai"
   }
 ]
